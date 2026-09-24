@@ -10,7 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 import platform
 
 # App title and presentation
-st.title('Generación Aumentada por Recuperación (RAG) 💬')
+st.title('Descubre el Arte del Buen Comer 💬')
 st.write("Versión de Python:", platform.python_version())
 
 # Load and display image
@@ -22,7 +22,7 @@ except Exception as e:
 
 # Sidebar information
 with st.sidebar:
-    st.subheader("Este Agente te ayudará a realizar análisis sobre el PDF cargado")
+    st.subheader("Explora recetas, técnicas de vanguardia y los secretos mejor guardados de la cultura culinaria, de la mano de expertos.")
 
 # Get API key from user
 ke = st.text_input('Ingresa tu Clave de OpenAI', type="password")
@@ -60,7 +60,7 @@ if pdf is not None and ke:
         knowledge_base = FAISS.from_texts(chunks, embeddings)
         
         # User question interface
-        st.subheader("Escribe qué quieres saber sobre el documento")
+        st.subheader("Escribe qué quieres saber sobre el Arte del Buen Comer")
         user_question = st.text_area(" ", placeholder="Escribe tu pregunta aquí...")
         
         # Process question when submitted
